@@ -1,0 +1,12 @@
+diff -aurN wpa_supplicant-0.6.8.orig/wpa_supplicant/Makefile wpa_supplicant-0.6.8/wpa_supplicant/Makefile
+--- wpa_supplicant-0.6.8.orig/wpa_supplicant/Makefile	2009-02-24 21:37:13.000000000 +0100
++++ wpa_supplicant-0.6.8/wpa_supplicant/Makefile	2009-02-24 21:39:34.000000000 +0100
+@@ -3,7 +3,7 @@
+ endif
+ 
+ ifndef CFLAGS
+-CFLAGS = -MMD -O2 -Wall -g
++CFLAGS = -MMD -Wall $(OPTFLAGS)
+ endif
+ 
+ export LIBDIR ?= /usr/local/lib/
