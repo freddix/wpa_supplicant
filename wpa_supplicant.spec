@@ -2,12 +2,12 @@
 
 Summary:	Linux WPA/WPA2/RSN/IEEE 802.1X supplicant
 Name:		wpa_supplicant
-Version:	1.1
+Version:	2.0
 Release:	1
 License:	GPL v2
 Group:		Networking
 Source0:	http://hostap.epitest.fi/releases/%{name}-%{version}.tar.gz
-# Source0-md5:	b29b9af02d7e092db8c5c8508de0e45c
+# Source0-md5:	3be2ebfdcced52e00eda0afe2889839d
 Source1:	%{name}.config
 Source2:	%{name}-tmpfiles.conf
 Patch0:		%{name}-Makefile.patch
@@ -60,14 +60,14 @@ Linux WPA/WPA2/RSN/IEEE 802.1X supplicant GUI.
 install %{SOURCE1} wpa_supplicant/.config
 
 %build
-CFLAGS="%{rpmcppflags} %{rpmcflags} `pkg-config --cflags libnl-3.0`"
+CFLAGS="%{rpmcppflags} %{rpmcflags}"
 export CFLAGS
-%{__make} -C wpa_supplicant		\
-	PREFIX="%{_prefix}"		\
-	BINDIR="%{_sbindir}"		\
-	LIBDIR="%{_libdir}"		\
-	CC="%{__cc}"			\
-	LDFLAGS="%{rpmldflags}"		\
+%{__make} -C wpa_supplicant	\
+	PREFIX="%{_prefix}"	\
+	BINDIR="%{_sbindir}"	\
+	LIBDIR="%{_libdir}"	\
+	CC="%{__cc}"		\
+	LDFLAGS="%{rpmldflags}"	\
 	V=1
 
 %if %{with gui}
