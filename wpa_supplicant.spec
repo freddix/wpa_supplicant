@@ -2,12 +2,12 @@
 
 Summary:	Linux WPA/WPA2/RSN/IEEE 802.1X supplicant
 Name:		wpa_supplicant
-Version:	2.2
+Version:	2.3
 Release:	1
 License:	GPL v2
 Group:		Networking
 Source0:	http://hostap.epitest.fi/releases/%{name}-%{version}.tar.gz
-# Source0-md5:	238e8e888bbd558e1a57e3eb28d1dd07
+# Source0-md5:	f2ed8fef72cf63d8d446a2d0a6da630a
 Source1:	%{name}.config
 Source2:	%{name}-tmpfiles.conf
 Patch0:		%{name}-Makefile.patch
