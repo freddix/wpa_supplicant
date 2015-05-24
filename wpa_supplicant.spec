@@ -2,12 +2,12 @@
 
 Summary:	Linux WPA/WPA2/RSN/IEEE 802.1X supplicant
 Name:		wpa_supplicant
-Version:	2.3
+Version:	2.4
 Release:	1
 License:	GPL v2
 Group:		Networking
 Source0:	http://hostap.epitest.fi/releases/%{name}-%{version}.tar.gz
-# Source0-md5:	f2ed8fef72cf63d8d446a2d0a6da630a
+# Source0-md5:	f0037dbe03897dcaf2ad2722e659095d
 Source1:	%{name}.config
 Source2:	%{name}-tmpfiles.conf
 Patch0:		%{name}-Makefile.patch
@@ -72,7 +72,7 @@ export CFLAGS
 
 %if %{with gui}
 cd wpa_supplicant/wpa_gui-qt4
-qmake -unix -o Makefile wpa_gui.pro
+qmake-qt4 -unix -o Makefile wpa_gui.pro
 %{__make} \
 	PREFIX="%{_prefix}"		\
 	BINDIR="%{_sbindir}"		\
